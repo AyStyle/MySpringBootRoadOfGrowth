@@ -27,8 +27,10 @@ SpringBoot的设计是为了让你尽可能快的跑起来Spring应用程序，�
    SpringBoot：简单、快速、方便地搭建项目，对主流开发框架的无配置集成，极大的提高了开发和部署的效率。
    ```
 
-
-
-
-
-
+#### 1.3 SpringBoot的全局配置文件
+```
+全局配置文件能够对一些默认配置值进行修改。SpringBoot使用一个application.properties或者application.yaml文件作为全局配置文件。
+该文件一般存放在resources目录或类路径的/config目录。
+application.properties/application.yaml文件中可以定义SpringBoot项目的相关属性。
+这些相关属性可以是：系统属性、环境变量、命令参数，也可以是自定义配置文件名称和位置
+```

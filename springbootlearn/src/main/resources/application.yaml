@@ -1,0 +1,15 @@
+# 对实体对象person进行属性配置
+person:
+    id: 111
+    name: ankang
+    hobby:
+        - 吃饭
+        - 睡觉
+        - 打豆豆
+    family: [mother,father,sister]
+    pet:
+        name: 喵咪
+        type: 猫咪
+    map:
+        - k1: v3
+        - k2: v4
