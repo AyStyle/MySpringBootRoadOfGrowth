@@ -2,7 +2,6 @@ package ankang.springboot.learn.springbootlearn.pojo;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,7 +16,9 @@ import org.springframework.stereotype.Component;
 public class MyProperties {
 
     private int id;
+    private Integer age;
     private String name;
+    private String desc;
 
     public int getId() {
         return id;
@@ -35,11 +36,29 @@ public class MyProperties {
         this.name = name;
     }
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
     @Override
     public String toString() {
         return "MyProperties{" +
                 "id=" + id +
+                ", age=" + age +
                 ", name='" + name + '\'' +
+                ", desc='" + desc + '\'' +
                 '}';
     }
 }
