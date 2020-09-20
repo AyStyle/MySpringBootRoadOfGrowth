@@ -1,5 +1,6 @@
 package ankang.springboot.learn.springbootlearn;
 
+import ankang.springboot.learn.pojo.SimpleBean;
 import ankang.springboot.learn.springbootlearn.config.MyService;
 import ankang.springboot.learn.springbootlearn.controller.HelloController;
 import ankang.springboot.learn.springbootlearn.pojo.MyProperties;
@@ -34,6 +35,9 @@ class SpringbootlearnApplicationTests {
     @Autowired
     private MyProperties myProperties;
 
+    @Autowired
+    private SimpleBean simpleBean;
+
     @Test
     void contextLoads() {
         final String demo = helloController.demo();
@@ -61,5 +65,9 @@ class SpringbootlearnApplicationTests {
         System.out.println(service);
     }
 
+    @Test
+    public void customerStarterTest(){
+        System.out.println(simpleBean);
+    }
 
 }
