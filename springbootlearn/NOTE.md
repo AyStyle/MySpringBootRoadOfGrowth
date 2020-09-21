@@ -104,7 +104,3 @@ SpringBoot提供的Starter以：spring-boot-starter-xxx的方式命名。
    
 2. 使用Starter
 
-#### 3. SpringBoot数据访问
-##### 3.1 SpringBoot整合Mybatis
-
-
