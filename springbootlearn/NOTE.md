@@ -104,3 +104,17 @@ SpringBoot提供的Starter以：spring-boot-starter-xxx的方式命名。
    
 2. 使用Starter
 
+#### 4. SpringBoo视图技术
+##### 4.1 SpringBoot支持的视图技术
+   ```
+       前端模板引擎技术的出现，使前端开发人员无需关注后端业务的具体实现，只需要关注自己页面呈现的效果即可，
+   并且解决了前端代码错综复杂的问题、实现了前后端分离开发。SpringBoot框架对很多常用的模板引擎技术（FreeMarker、
+   Thymeleaf、Mustache等）提供了整合支持。
+       
+       SpringBoot不太支持常用的JSP模板，并且没有提供对应的整合配置，这是因为使用嵌入式Servlet容器的SpringBoot
+   应用程序对于JSP模板存在一些限制：
+       1. SpringBoot默认使用嵌入式Servlet容器以JAR包方式进行项目打包部署，这种JAR包方式不支持JSP模板。
+       2. 如果使用Undertow嵌入式容器部署SpringBoot项目，也不支持JSP模板。
+       3. SpringBoot默认提供了一个处理请求路径"/error"的统一错误处理器，返回具体的异常信息。
+          使用JSP模板时，无法对默认的错误处理器进行覆盖，只能根据SpringBoot要求在指定位置定制错误页面。
+   ```
