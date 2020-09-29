@@ -118,3 +118,66 @@ SpringBoot提供的Starter以：spring-boot-starter-xxx的方式命名。
        3. SpringBoot默认提供了一个处理请求路径"/error"的统一错误处理器，返回具体的异常信息。
           使用JSP模板时，无法对默认的错误处理器进行覆盖，只能根据SpringBoot要求在指定位置定制错误页面。
    ```
+
+##### 4.2 SpringBoot整合Thymeleaf
+1. Thymeleaf语法
+   1. 常用标签：
+      
+      xmlns:th="http://www.thymeleaf.org"
+      
+      |th标签|说明|
+      |:---:|:---|
+      |th:insert|布局标签，替换内容到引入的文件|
+      |th:replace|布局标签，替换整个标签到引入的文件|
+      |th:each|元素遍历，类似JSP中的c:forEach|
+      |th:if|条件判断，如果为真|
+      |th:unless|条件判断，如果为假|
+      |th:switch|条件判断，进行选择性匹配|
+      |th:case|条件判断，进行选择性匹配|
+      |th:value|属性值修改，指定标签属性值|
+      |th:href|用于设定链接地址|
+      |th:src|用于设定链接地址，通常是图片|
+      |th:text|用于指定标签显示的文本内容|
+      |th:object|用于指定标签对应的Object|
+      
+   2. 标准表达式
+   
+      |表达式|说明|
+      |:---:|:---|
+      |${...}|变量表达式|
+      |*{...}|选择变量表达式|
+      |#{...}|消息表达式|
+      |@{...}|链接URL表达式|
+      |~{...}|片段表达式|
+      ```
+      注：${...}变量表达式
+      主要用于获取上下文中的变量。
+     
+      内置对象：
+         #ctx：上下文对象
+         #vars：上下文变量
+         #locale：上下文区域设置
+         #request：(仅限Web Context)HttpServletRequest对象
+         #response：(仅限Web Context)HttpServletResponse对象
+         #session：(仅限Web Context)HttpSession对象
+         #servletContext：(仅限Web Context)ServletContext对象
+         #ctx：上下文对象
+      ```
+
+2. 基本使用
+   1. Thymeleaf模板基本配置
+      1. 在SpringBoot中引入Thymeleaf模板
+      
+      2. 在全局配置文件中设置Thymeleaf模板参数（Web项目都会使用系列参数）
+         ```
+         spring.thymeleaf.cache=true                        # 启用模板缓存
+         spring.thymeleaf.encoding=UTF-8                    # 模板编码
+         spring.thymeleaf.mode=HTML5                        # 应用于模板的模板方式
+         spring.thymeleaf.prefix=classpath:/thmplates/      # 指定模板页面存放路径
+         spring.thymeleaf.suffix=.html                      # 指定模板页面名称的后缀
+         ```
+         
+   2. 静态资源的访问
+      ```
+      SpringBoot默认在resources目录下创建一个子目录用于存放静态资源文件：public.resources.static
+      ``` 
